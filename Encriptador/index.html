@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <textarea class="areaDeTexto" placeholder="Ingrese el texto a (des)encriptar"></textarea>
+    <button class="Encriptador" type="button">Encriptador</button>
+    <button class="Desencriptador" type="button">Desencriptador</button>
+
+    <textarea class="areaDeTextoAlterado" placeholder="Aqui aparecera el texto alterado"></textarea>
+    <button id="copiar" type="button" display="none">Copiar</button>
+    <script>
+        let textoAlterado=document.getElementsByClassName('areaDeTextoAlterado')
+        let botonCopy=document.getElementById('copiar')
+        textoAlterado[0].style.display = 'none';
+        botonCopy.style.display ="none";
+    </script>
+
+    <script src="./app.js"></script>
+</body>
+</html>
