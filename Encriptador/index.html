@@ -10,16 +10,16 @@
     <textarea class="areaDeTexto" placeholder="Ingrese el texto a (des)encriptar"></textarea>
     <button class="Encriptador" type="button">Encriptador</button>
     <button class="Desencriptador" type="button">Desencriptador</button>
-
-    <textarea class="areaDeTextoAlterado" placeholder="Aqui aparecera el texto alterado"></textarea>
-    <button id="copiar" type="button" display="none">Copiar</button>
+    
+    <textarea id="areaDeTextoAlterado" class="invisible" placeholder="Aqui aparecera el texto alterado"></textarea>
+    <button id="copiar" class="invisible" type="button" display="none">Copiar</button>
+    
     <script>
-        let textoAlterado=document.getElementsByClassName('areaDeTextoAlterado')
-        let botonCopy=document.getElementById('copiar')
-        textoAlterado[0].style.display = 'none';
-        botonCopy.style.display ="none";
+        let invisibles=document.getElementsByClassName("invisible");
+        for (let i=0, j=invisibles.length;i<j;i++){
+            invisibles[i].style.display="none";
+        }
     </script>
-
     <script src="./app.js"></script>
 </body>
 </html>

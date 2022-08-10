@@ -1,16 +1,17 @@
 "use strict";
 
-const encriptador={'a': 'ai', 'e': 'enter', 'i': 'imes', 'o': 'ober',
-'u': 'ufat'};
+const encriptador={'a': 'ai', 'e': 'enter', 'i': 'imes', 'o': 'ober','u': 'ufat'};
 
 function validarCadena(){
     const mayuscula=/[A-Z]/;
+    const especiales=/[À-Ýà-ÿ]/
     let texto=document.getElementsByClassName('areaDeTexto');
+    let cadena=texto[0].value;
   
-    if(!(mayuscula.test(texto[0].value))){
+    if(!(mayuscula.test(cadena))&&!(especiales.test(cadena))){
         return true;
     }else{
-        alert("Introduzca solo cadenas en minusculas");
+        alert("Introduzca solo cadenas en minusculas y sin acentos");
         return false;
     }
 }
@@ -93,22 +94,21 @@ function encriptar(palabra){
 }
 
 function desoscultaryocultar(){
-    let textoAlterado=document.getElementsByClassName('areaDeTextoAlterado');
-    let botonCopiar=document.getElementById("copiar")
-
-    if(textoAlterado[0].style.display==="none"){
-        textoAlterado[0].style.display="block";
-        botonCopiar.style.display="block"
+    let invisibles=document.getElementsByClassName("invisible");
+        
+    for (let i=0, j=invisibles.length;i<j;i++){
+        invisibles[i].style.display="block";
     }
 }
+
 
 /**-------------------------------------------------------------------------------------- */
 function encriptarMensaje(){
     let texto=document.getElementsByClassName('areaDeTexto');
-    let textoAlterado=document.getElementsByClassName('areaDeTextoAlterado');
+    let textoAlterado=document.getElementById('areaDeTextoAlterado');
     
     let textoAEncriptar=texto[0].value;
-    textoAlterado[0].value=encriptar(textoAEncriptar);
+    textoAlterado.value=encriptar(textoAEncriptar);
     
     desoscultaryocultar();
 }
@@ -116,18 +116,18 @@ function encriptarMensaje(){
 
 function desencriptarMensaje(){
     let texto=document.getElementsByClassName('areaDeTexto');
-    let textoAlterado=document.getElementsByClassName('areaDeTextoAlterado');
+    let textoAlterado=document.getElementById('areaDeTextoAlterado');
     
-    let textoAEncriptar=texto[0].value;
-    textoAlterado[0].value=desencriptar(textoAEncriptar);
+    let textoADesencriptar=texto[0].value;
+    textoAlterado.value=desencriptar(textoADesencriptar);
     
     desoscultaryocultar();
 }
 
 function copiar(){
-    let textoACopiar=document.getElementsByClassName('areaDeTextoAlterado');
-    textoACopiar[0].select();
-    navigator.clipboard.writeText(textoACopiar[0].value);
+    let textoACopiar=document.getElementById('areaDeTextoAlterado');
+    textoACopiar.select();
+    navigator.clipboard.writeText(textoACopiar.value);
 }
 
 
@@ -138,6 +138,3 @@ let botonCopiar=document.getElementById("copiar")
 botonEncriptar[0].onclick=encriptarMensaje;
 botonDesencriptar[0].onclick=desencriptarMensaje;
 botonCopiar.onclick=copiar;
-
-
-
