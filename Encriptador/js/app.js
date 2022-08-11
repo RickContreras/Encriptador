@@ -95,10 +95,14 @@ function encriptar(palabra){
 
 function desoscultaryocultar(){
     let invisibles=document.getElementsByClassName("invisible");
-        
+    let visibles=document.getElementsByClassName("visible");
     for (let i=0, j=invisibles.length;i<j;i++){
         invisibles[i].style.display="block";
     }
+
+    for (let k=0, h=visibles.length;k<h;k++){
+        visibles[k].style.display="none";
+    } 
 }
 
 
@@ -106,7 +110,6 @@ function desoscultaryocultar(){
 function encriptarMensaje(){
     let texto=document.getElementsByClassName('areaDeTexto');
     let textoAlterado=document.getElementById('areaDeTextoAlterado');
-    
     let textoAEncriptar=texto[0].value;
     textoAlterado.value=encriptar(textoAEncriptar);
     

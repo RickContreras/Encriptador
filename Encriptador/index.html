@@ -1,25 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!--Crearemos nuestro base para el encriptador-->
+
+<!-- Añadimos la etiquete base con las cosas importante que
+debe tener en cuenta HTML, es decir "head"-->
+
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <!--Crearemos un titulo para el sitio web-->
+    <title>Reto01: Encriptador</title>
+    
+    <!--Unimos nuestro archivo HTML con los de CSS.
+    
+        Utilizamos el archivo reset.css para reiniciar estilos.
+
+        Utilizamos el archivo stles.css para dar nuestros estilos.
+    -->
+    <!--<link type="text/css" rel="stylesheet" href="css/reset.css"/>-->
+    <link type="text/css" rel="stylesheet" href="css/reset.css"/>
+
+    <!-- Unimos nuestro archivo HTML con JavaScript-->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <textarea class="areaDeTexto" placeholder="Ingrese el texto a (des)encriptar"></textarea>
-    <button class="Encriptador" type="button">Encriptador</button>
-    <button class="Desencriptador" type="button">Desencriptador</button>
     
-    <textarea id="areaDeTextoAlterado" class="invisible" placeholder="Aqui aparecera el texto alterado"></textarea>
-    <button id="copiar" class="invisible" type="button" display="none">Copiar</button>
+    <header>
+        <h1>
+            <img src="img/Logo.png" alt="Logo"/>
+        </h1>
+    </header>
+
+    <main id="contenido">
+        <!--Creamos nuestra area de texto donde entra el texto a des/encriptar-->
+        <div id="textoYBotones">
+            
+            <form>
+            
+                <textarea class="areaDeTexto" placeholder="Ingrese el texto a (des)encriptar"></textarea>
+
+            </form>
+            
+            <div class="Botones">
+
+                <!--Aviso de condiciones-->
+
+                <p class="advertencia"><img src="img/Vector.png" alt="logoDeAdvertencia"/> Solo letras minúsculas y sin acentos</p>
+                
+                <!--Creamos los dos botenes para el encriptador-->
+        
+                <!--Boton encriptador-->
+
+                <button class="Encriptador" type="button">Encriptador</button>
+                
+                <!--Boton desencriptador-->
+
+                <button class="Desencriptador" type="button">Desencriptador</button>
+            </div>
+            
+        </div>
+        
+        <aside>
+            <textarea id="areaDeTextoAlterado" class="invisible" placeholder="Aqui aparecera el texto alterado"></textarea>
+            
+
+            <img id="muneco" class="visible" src="img/Muñeco.png" alt="Muñeco"/>
+            
+            <p class="visible">Ningún mensaje fue encontrado</p>
+
+            <p class="visible">Ingresa el texto que desees encriptar o desencriptar.</p>
+
+            <button id="copiar" class="invisible" type="button" display="none">Copiar</button>
+        </aside>
+        
+        <script>
+            let invisibles=document.getElementsByClassName("invisible");
+
+            for (let i=0, j=invisibles.length;i<j;i++){
+                invisibles[i].style.display="none";
+            }
+
+        </script>
+
+    </main>
     
-    <script>
-        let invisibles=document.getElementsByClassName("invisible");
-        for (let i=0, j=invisibles.length;i<j;i++){
-            invisibles[i].style.display="none";
-        }
-    </script>
-    <script src="./app.js"></script>
+    <footer>
+
+        <p>Hecho por: Ricardo Contreras Garzon</p>
+        <!--Aqui pondremos los datos de quien lo desarrollo-->
+
+    </footer>
+    
+    
+    <script src="js/app.js"></script>
 </body>
 </html>
