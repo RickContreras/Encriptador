@@ -19,11 +19,6 @@ header{
     height: 70px;
 }
 
-header h1{
-    position: relative;
-    top: 3%;
-    right: 45%;
-}
 
 
 main{
@@ -42,6 +37,7 @@ main{
     width: 60%;
     margin-left: 3%;
     bottom: 0;
+    text-align: center;
 }
 
 .areaDeTexto{
@@ -65,8 +61,9 @@ button{
     margin: 2px;
     width: 80%;
     height: 67px;
-    margin-left: 10%;
-    margin-right: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    align-content: center;
 }
 
 .advertencia{
@@ -79,7 +76,10 @@ aside{
 }
 
 aside p{
-    margin: 5px; 
+    margin: 5px;
+    text-align: center;
+    padding-left: 2%; 
+    padding-right: 2%;
 }
 
 #areaDeTextoAlterado{
@@ -95,7 +95,9 @@ aside p{
 
 #copiar{
     width: 80%;
-    max-height: 70%;
+    max-height: 60%;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
 footer{
