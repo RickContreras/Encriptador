@@ -19,6 +19,12 @@ header{
     height: 70px;
 }
 
+header h1{
+    position: relative;
+    top: 3%;
+    right: 45%;
+}
+
 
 main{
     margin:4px;
@@ -40,11 +46,11 @@ main{
 
 .areaDeTexto{
     margin: 5px;
-    width: 96%;
+    width: 90%;
     height: 249px;
     border: 2px solid black;
     border-radius: 10px;
-    max-width: 96%;
+    max-width: 90%;
     max-height: 250px;
     resize: none;
       
@@ -89,7 +95,7 @@ aside p{
 
 #copiar{
     width: 80%;
-    max-height: 80%;
+    max-height: 70%;
 }
 
 footer{
